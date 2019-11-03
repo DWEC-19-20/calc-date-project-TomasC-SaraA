@@ -1,0 +1,60 @@
+body {
+    background-color: orange;
+    font-size: 20px;
+}
+
+.fecha {
+    width: 100%;
+    text-align: center;
+    height: 20%;
+    margin-top: 0%;
+}
+
+.opcion {
+    width: 100%;
+    text-align: center;
+    margin-top: 1%;
+}
+
+.opcion ul,
+li {
+    display: inline-block;
+    list-style: none;
+    padding-right: 5px;
+}
+
+.dias {
+    margin-left: 25%;
+    display: inline-block;
+}
+
+.final {
+    float: right;
+    margin-right: 20%;
+}
+
+button {
+    color: blanchedalmond;
+    font-size: 15px;
+    background: black;
+    border-radius: 15px;
+    border: 1px solid;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+input {
+    font-size: 15px;
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+#resul {
+    margin-left: 25%;
+}
+
+#resul2 {
+    margin-left: 25%;
+}
