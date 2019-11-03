@@ -1,10 +1,42 @@
 <!DOCTYPE html>
+
 <head>
     <link rel="stylesheet" type="text/css" href="css/mystyle.css">
 </head>
 <html>
-    <body>
 
-       <script src="js/dateCalc.js"></script> 
-    </body>
+<body>
+    <div>
+        <div class="fecha">
+            <h1>INTRODUZCA FECHA</h1>
+            <input type="date" id="startdate">
+        </div>
+        <div class="opcion">
+            <ul>
+                <li><input type="radio" name="dias" id="naturales" checked><label>Dias naturales</label></li>
+
+                <li><input type="radio" name="dias" id="habiles"><label>Dias habiles</label></li>
+            </ul>
+        </div>
+        <div class="dias">
+            <label>Introduce la fecha final: </label>
+            <input type="date" id="endDate">
+            <button id="boton1">Calcular</button>
+            <br><br>
+            <input type="text" id="resul" readonly>
+        </div>
+        <div class="final">
+            <label>Introduce el número de dias: </label>
+            <input type="text" id="numdias">
+            <button id="fechafinal">Calcular</button>
+            <br><br>
+            <input type="text" id="resul2" readonly>
+        </div>
+    </div>
+
+
+    <script src="js/dateCalc.js"></script>
+    <script src="js/interface.js"></script>
+</body>
+
 </html>
