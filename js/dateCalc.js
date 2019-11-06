@@ -21,8 +21,7 @@ function calcDate(startdate, days) {
 */
 function getDays(startdate, endDate) {
 
-    var dias = (endDate.getTime() - startdate.getTime()) / DIA_MILISEGUNDOS;
-
+    var dias = Math.ceil((endDate.getTime() - startdate.getTime()) / DIA_MILISEGUNDOS);
 
     return dias;
 }
@@ -33,17 +32,22 @@ function getDays(startdate, endDate) {
    return el resultado como un string en formato dd/mm/YYYY
 */
 function calcWorkingDate(startdate, days) {
-    while (days > 0) {
+    contador = Math.abs(days); // pasamos dias a valor absoluto para que sirva de contador
+    while (contador > 0) {
+        if (days >= 0) {
+            calcDate(startdate, 1); // sumamos un día a la fecha 
+        } else {
+            calcDate(startdate, -1); //restamos un dia a la fecha
+        }
 
-        calcDate(startdate, 1); // sumamos un día a la fecha
 
         if (esFinDeSemana(startdate)) { //Si es finde, restamos 1
-            days++;
+            contador++;
 
         } else if (esDiaFiesta(startdate)) {
-            days++;
+            contador++;
         }
-        days--;
+        contador--;
     }
     return startdate.toLocaleDateString("es-ES");
 }
@@ -74,7 +78,16 @@ function esDiaFiesta(fecha) {
   endDate: objeto Fecha inicio
   return número de días hábiles entre las dos fechas*/
 function getWorkingDays(startdate, endDate) {
+    if (startdate > endDate) {
+        var aux;
+        aux = startdate;
+        startdate = endDate;
+        endDate = aux;
+    }
+
     var diasHabiles = getDays(startdate, endDate);
+
+
     while (startdate < endDate) {
         calcDate(startdate, 1);
         if (esFinDeSemana(startdate)) {
@@ -86,6 +99,6 @@ function getWorkingDays(startdate, endDate) {
     }
 
 
+
     return diasHabiles;
 }
-
