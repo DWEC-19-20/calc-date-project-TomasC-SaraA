@@ -1,8 +1,55 @@
-document.getElementById("boton1").addEventListener("click", function(e) {
-    parseDate();
+//obtenervalores formulario
+
+/*
+document.getElementById("boton").addEventListener("click", function(e) {
+    ParseDate();
+
 });
 
+
+function ParseDate() {
+    var startdate = new Date(document.getElementById("startdate").value);
+    var endDate = new Date(document.getElementById("endDate").value);
+    document.getElementById("enviar").value = getDays(startdate, endDate);
+}
+
+document.getElementById("dias").addEventListener("click", function(e) {
+    diasNat();
+
+});
+
+function diasNat() {
+    var startdate = new Date(document.getElementById("startdate").value);
+    var days = document.getElementById("days").value;
+    document.getElementById("enviar").value = calcDate(startdate, days);
+}
+document.getElementById("dh").addEventListener("click", function(e) {
+    diaHab();
+});
+
+function diaHab() {
+    var startdate = new Date(document.getElementById("startdate").value);
+    var days = document.getElementById("habil").value;
+    document.getElementById("final").value = calcWorkingDate(startdate, days);
+}
+*/
+
+document.getElementById("boton1").addEventListener("click", function (e) {
+    parseDate();
+});
+document.getElementById("hoy").addEventListener("click", function (e) {
+
+    fechaHoy();
+});
+
+function fechaHoy() {
+    var hoy = new Date();
+    document.getElementById('startdate').value = hoy.getFullYear() + "-" + (hoy.getMonth() + 1) + "-" + hoy.getDate();
+}
+
+
 function parseDate() {
+
     var startdate = new Date(document.getElementById("startdate").value);
     var endDate = new Date(document.getElementById("endDate").value);
     if (document.getElementById("naturales").checked == true) {
@@ -12,7 +59,7 @@ function parseDate() {
     }
 
 }
-document.getElementById("fechafinal").addEventListener("click", function(e) {
+document.getElementById("fechafinal").addEventListener("click", function (e) {
     parseDay();
 });
 
